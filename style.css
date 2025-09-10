@@ -1,0 +1,29 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; }
+header { padding: 12px 16px; background: #0b57d0; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+header .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+button, .file-btn { padding: 10px 14px; border: 0; border-radius: 10px; background: #e5e7eb; }
+button.primary { background: #0ea5e9; color: #fff; }
+button.danger { background: #ef4444; color: #fff; }
+button.secondary { background: #e5e7eb; color: #111; }
+.file-btn { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.file-btn input { display: none; }
+main { padding: 16px; display: grid; gap: 12px; }
+.card { border: 1px solid color-mix(in oklab, CanvasText 12%, transparent); border-radius: 12px; padding: 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.muted { opacity: .8; font-size: .95em; }
+#tbl { width: 100%; border-collapse: collapse; margin-top: 8px; }
+#tbl th, #tbl td { padding: 8px; border-bottom: 1px solid rgba(0,0,0,.08); }
+#tbl td:last-child { text-align: right; }
+.grid { display: grid; gap: 8px; }
+.form label { display: grid; gap: 6px; margin: 8px 0; }
+input[type="text"], input[type="number"], input[type="search"], #search, .form input { padding: 10px; border-radius: 10px; border: 1px solid rgba(0,0,0,.15); }
+.hidden { display: none !important; }
+.hide-mobile { display: table-cell; }
+@media (max-width: 720px){ .hide-mobile { display: none; } }
+.flash { border: 2px solid rgba(0,0,0,.1); border-radius: 12px; padding: 24px; min-height: 140px; display: grid; gap: 12px; align-content: center; justify-items: center; text-align: center; }
+#front { font-size: 28px; font-weight: 700; }
+#back { font-size: 22px; opacity: .95; }
+#updatebar { position: fixed; left: 50%; transform: translateX(-50%); bottom: 16px; background: #1f2937; color: #fff; padding: 10px 14px; border-radius: 999px; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+#updatebar[hidden] { display: none; }

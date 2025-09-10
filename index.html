@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ungerska Glosor</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#0b57d0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="./assets/icon-512.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Ungerska Glosor</h1>
+    <div class="row">
+      <button id="btnStudy">Starta övning</button>
+      <button id="btnAdd">Lägg till</button>
+      <label class="file-btn">Importera CSV <input id="fileImport" type="file" accept=".csv,text/csv" hidden></label>
+      <button id="btnExport">Exportera</button>
+      <button id="btnSettings" title="Inställningar">⚙️</button>
+    </div>
+  </header>
+  <main>
+    <section id="panelList" class="card">
+      <div class="row" style="justify-content: space-between; align-items: center;">
+        <div class="muted">Totalt: <span id="statTotal">0</span> • Due idag: <span id="statDue">0</span></div>
+        <input id="search" placeholder="Sök (hu/sv)" />
+      </div>
+      <table id="tbl">
+        <thead><tr><th>🇭🇺 Ungerska</th><th>🇸🇪 Svenska</th><th class="hide-mobile">Nästa repetition</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section id="panelAdd" class="card hidden">
+      <h2>Lägg till glosa</h2>
+      <div class="form">
+        <label>Ungerska <input id="inHu" placeholder="pl. köszönöm" /></label>
+        <label>Svenska <input id="inSv" placeholder="tack" /></label>
+        <label class="row">Exempel (valfritt) <input id="inNote" placeholder="Köszönöm szépen."/></label>
+        <div class="row">
+          <button id="saveWord">Spara</button>
+          <button id="cancelAdd" class="secondary">Avbryt</button>
+        </div>
+      </div>
+    </section>
+    <section id="panelStudy" class="card hidden">
+      <div class="row" style="justify-content: space-between; align-items: center;">
+        <h2>Studera</h2>
+        <div class="muted">Kvar: <span id="leftCount">0</span></div>
+      </div>
+      <div id="card" class="flash">
+        <div id="front"></div>
+        <div id="back" class="hidden"></div>
+      </div>
+      <div class="row">
+        <button id="btnSpeak">🔊</button>
+        <button id="btnReveal">Visa svar</button>
+      </div>
+      <div id="ratings" class="row hidden">
+        <button data-q="0" class="danger">Fel</button>
+        <button data-q="1">Svår</button>
+        <button data-q="2" class="primary">Bra</button>
+        <button data-q="3">Lätt</button>
+      </div>
+      <div class="row">
+        <button id="btnExitStudy" class="secondary">Avsluta</button>
+      </div>
+    </section>
+    <section id="panelSettings" class="card hidden">
+      <h2>Inställningar</h2>
+      <div class="form">
+        <label>Nya ord per dag <input id="setNewPerDay" type="number" min="0" max="200" value="10" /></label>
+        <label>Max repetitioner/dag <input id="setMaxReps" type="number" min="0" max="1000" value="200" /></label>
+        <label><input id="setReverse" type="checkbox" /> Slumpa även svensk→ungersk</label>
+        <div class="row">
+          <button id="saveSettings">Spara inställningar</button>
+          <button id="closeSettings" class="secondary">Stäng</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="updatebar" hidden>Ny version finns <button id="reload">Uppdatera</button></div>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
