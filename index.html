@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Korsord PWA</title>
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#0b57d0">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="./assets/icon-512.png">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Korsord</h1>
+    <div class="row">
+      <button id="install" hidden>Installera</button>
+      <button id="share" title="Dela">Dela</button>
+      <button id="wakelock" title="Håll skärmen vaken">Skärm på</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="row" style="justify-content: space-between; align-items: center;">
+        <div>
+          <label for="puzzleSelect">Pussel:</label>
+          <select id="puzzleSelect">
+            <option value="sample.json">Demo 7×7 (svenska tecken)</option>
+          </select>
+        </div>
+        <div class="row">
+          <button id="check-word">Kontrollera ord</button>
+          <button id="check-all">Rätta allt</button>
+          <button id="clear">Rensa</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-wrap">
+      <div id="grid" aria-label="Korsordsrutnät"></div>
+      <aside>
+        <h2>Vågrätt</h2>
+        <ol id="clues-across"></ol>
+        <h2>Lodrätt</h2>
+        <ol id="clues-down"></ol>
+      </aside>
+    </section>
+
+    <section class="card muted">
+      <p>Tips: Tryck på ett nummer i ledtrådslistan för att hoppa. Mellanslag byter riktning. Piltangenter navigerar.</p>
+    </section>
+  </main>
+
+  <div id="updatebar" hidden>
+    Ny version finns
+    <button id="reload">Uppdatera</button>
+  </div>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
