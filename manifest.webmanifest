@@ -1,0 +1,19 @@
+{
+  "name": "Min PWA+",
+  "short_name": "PWA+",
+  "description": "En Progressive Web App med offline-stöd, uppdateringar och smart caching.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b57d0",
+  "icons": [
+    { "src": "./assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "shortcuts": [
+    { "name": "Fortsätt", "url": "./?continue=1", "icons": [{ "src": "./assets/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Dagens", "url": "./?daily=1", "icons": [{ "src": "./assets/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "categories": ["utilities", "productivity"]
+}
